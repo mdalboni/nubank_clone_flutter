@@ -10,11 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
 
+  page_indicator: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
+  uses-material-design: true
 #  assets:
 #    - fonts/
 #    - images/a_dot_ham.jpeg
