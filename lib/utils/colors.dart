@@ -5,5 +5,5 @@ Color greyOpacity20() {
 }
 
 Color greyOpacity100() {
-  return Color.fromRGBO(230, 230, 230, 1.0);
+  return Color.fromRGBO(240, 240, 240, 1.0);
 }

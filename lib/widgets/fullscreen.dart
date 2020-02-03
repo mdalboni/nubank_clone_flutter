@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank_clone_flutter/utils/theme.dart';
 
 Scaffold solidBackgroundScreen(bodyData) {
   return Scaffold(
@@ -6,7 +7,7 @@ Scaffold solidBackgroundScreen(bodyData) {
     body: Container(
       alignment: Alignment.center,
       constraints: BoxConstraints.expand(),
-      color: Color.fromRGBO(109, 33, 119, 1.0) ,
+      color: CommonColors.primary ,
       child: bodyData,
     ),
   );

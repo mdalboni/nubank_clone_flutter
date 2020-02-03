@@ -12,7 +12,7 @@ Widget greyContainerButton(IconData icon, String label) {
       child: FlatButton(
         onPressed: () {},
         child: SafeArea(
-            minimum: EdgeInsets.only(top: 10.0, bottom: 10.0),
+            minimum: EdgeInsets.only(top: 10.0, bottom: 14.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
