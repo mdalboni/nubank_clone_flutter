@@ -18,9 +18,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-#  assets:
-#    - fonts/
-#    - images/a_dot_ham.jpeg
+  assets:
+    - assets/no.jpg
+
   fonts:
    - family: Graphik
      fonts:
