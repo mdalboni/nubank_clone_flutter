@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 class CommonColors {
   static final Color primary = Color.fromRGBO(129, 38, 157, 1.0);
+  static final Color primaryDark = Color.fromRGBO(117, 34, 140, 1.0);
   static final Color accent = Color.fromRGBO(226, 193, 193, 1.0);
   static final Color positiveBlue = Color.fromRGBO(122, 234, 237, 1.0);
+
+  static final Color greyOpacity20 = Color.fromRGBO(180, 180, 180, 0.2);
+  static final Color greyOpacity100 = Color.fromRGBO(240, 240, 240, 1.0);
 }
 
 ThemeData getThemeData() {

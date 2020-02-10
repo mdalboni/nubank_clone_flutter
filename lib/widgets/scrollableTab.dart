@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nubank_clone_flutter/utils/colors.dart';
+import 'package:nubank_clone_flutter/utils/theme.dart';
 import 'package:nubank_clone_flutter/widgets/buttons.dart';
 import 'package:nubank_clone_flutter/widgets/card.dart';
 import 'package:page_indicator/page_indicator.dart';
@@ -21,8 +21,8 @@ Widget scrollableTab(PageController controller, context) {
     length: 3,
     indicatorSpace: 5.0,
     padding: const EdgeInsets.only(bottom: 0),
-    indicatorColor: greyOpacity20(),
+    indicatorColor: CommonColors.greyOpacity20,
     indicatorSelectorColor: Colors.white,
-    shape: IndicatorShape.circle(size: 6),
+    shape: IndicatorShape.circle(size: 4),
   );
 }

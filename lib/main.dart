@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nubank_clone_flutter/home/page.dart';
-import 'package:nubank_clone_flutter/home/stack.dart';
 import 'package:nubank_clone_flutter/utils/theme.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: getThemeData(),
-      home: StackPage(title: 'Nubank Home'),
+      home: HomePage(),
       routes: {
 //          '/stuf': (context) => Stack(),
 //        '/login': (context) => SecondScreen(),
