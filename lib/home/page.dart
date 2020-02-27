@@ -25,15 +25,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool status = topSliderWidgetKey.currentState != null
-        ? topSliderWidgetKey.currentState.isOpen
-        : false;
     return solidBackgroundScreen(TopSliderWidget(
         key: topSliderWidgetKey,
         body: Column(children: <Widget>[
-          Expanded(child: SizedBox(), flex: !status ? 6 : 0),
-          Expanded(child: scrollableTab(controller, context), flex: 65),
-          Expanded(child: SizedBox(), flex: 8),
+          Expanded(child: scrollableTab(controller, context), flex: 75),
+          Expanded(child: SizedBox(), flex: 10),
           horizontalHomeMenu()
         ])));
   }

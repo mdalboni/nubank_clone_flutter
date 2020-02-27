@@ -23,6 +23,6 @@ Widget scrollableTab(PageController controller, context) {
     padding: const EdgeInsets.only(bottom: 0),
     indicatorColor: CommonColors.greyOpacity20,
     indicatorSelectorColor: Colors.white,
-    shape: IndicatorShape.circle(size: 4),
+    shape: IndicatorShape.circle(size: 7),
   );
 }

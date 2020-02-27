@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:nubank_clone_flutter/utils/theme.dart';
 
 final topSliderWidgetKey = new GlobalKey<_TopSliderWidgetState>();
 
@@ -13,10 +14,11 @@ class TopSliderWidget extends StatefulWidget {
 }
 
 class _TopSliderWidgetState extends State<TopSliderWidget> {
-  static double _minHeight = 100;
+  static double _minHeight = 160;
   double _maxHeight;
   Offset _offset = Offset(0, _minHeight);
   bool _isOpen = false;
+
   bool get isOpen => _isOpen;
   PageController controller;
 
@@ -28,7 +30,7 @@ class _TopSliderWidgetState extends State<TopSliderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    _maxHeight = MediaQuery.of(context).size.height - 55;
+    _maxHeight = MediaQuery.of(context).size.height - 20;
     return topSliderPage(
         body: Container(
             height: _maxHeight - _minHeight,
@@ -44,25 +46,24 @@ class _TopSliderWidgetState extends State<TopSliderWidget> {
         GestureDetector(
           onPanUpdate: (details) {
             setState(() {
-              _offset = Offset(0, _offset.dy + details.delta.dy);
-              if (_offset.dy < _TopSliderWidgetState._minHeight) {
+              if (_offset.dy <= _TopSliderWidgetState._minHeight) {
                 close();
-              } else if (_offset.dy > _maxHeight) {
+              } else if (_offset.dy >= _maxHeight - 50) {
                 open();
               }
+              _offset = Offset(0, _offset.dy + details.delta.dy);
             });
           },
           onPanEnd: (details) {
             setState(() {
               double spd = details.velocity.pixelsPerSecond.dy;
-              if (spd != 0.0){
+              if (spd != 0.0) {
                 if (spd > 0.0) {
                   open();
                 } else {
                   close();
                 }
-
-              }else {
+              } else {
                 if (_offset.dy > _maxHeight / 2) {
                   open();
                 } else {
@@ -76,7 +77,7 @@ class _TopSliderWidgetState extends State<TopSliderWidget> {
               curve: Curves.easeOut,
               height: _offset.dy,
               alignment: Alignment.center,
-              decoration: BoxDecoration(color: Colors.red),
+              decoration: BoxDecoration(color: CommonColors.primary),
               child: SafeArea(
                   minimum: EdgeInsets.only(top: 50),
                   top: true,
@@ -109,7 +110,7 @@ class _TopSliderWidgetState extends State<TopSliderWidget> {
   }
 
   void open() {
-    _offset = Offset(0, _maxHeight);
+    _offset = Offset(0, _maxHeight - 50);
     _isOpen = true;
   }
 
@@ -120,7 +121,7 @@ class _TopSliderWidgetState extends State<TopSliderWidget> {
         double value = _offset.dy + 1;
         _offset = Offset(0, value);
         if (_offset.dy > _maxHeight) {
-          _offset = Offset(0, _maxHeight);
+          _offset = Offset(0, _maxHeight - 50);
           timer.cancel();
         }
       } else {
